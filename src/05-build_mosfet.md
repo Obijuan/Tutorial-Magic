@@ -46,6 +46,35 @@ Lo que significa es que la zona de difusión N tiene **unas dimensiones menores 
 
 ## Ampliando la anchura de la zona N
 
+Vamos a solucionar primero **el problema de la anchura**. La anchura actual es de **0.050um**, pero debe ser al menos de **0.150um**. Situamos el puntero del ratón cerca de la zona donde queremos que se sitúe la **esquina superior derecha** de la **nueva caja** y pulsamos el **botón derecho del ratón**
+
+![Zona N width](images/zona-n-width-1.png)
+
+Se dibuja una **nueva caja** que mantiene la izquina inferior izquierda en el mismo sitio que antes, pero sitúa la esquina superior derecha en el nuevo punto (alineado con la cuadrícula)
+
+Ahora pintamos la nueva zona, ejecutando el comando `paint ndiffusion`, igual que antes
+
+![Zona N width](images/zona-n-width-2.png)
+
+Ahora sólo queda **1 error de DRC**. Se muestra en la capa errors las cuadrículas que deberían ser zonas de difusión n, es decir, hay que ampliar la altura para que sea de al menos 0.150um
+
+## Ampliando la altura de la Zona N
+
+Repetimos el proceso. Con el **botón derecho** seleccionamos el punto de la cuadrícula donde queremos que se sitúe **la esquina superior derecha** de la caja
+
+![](https://github.com/Obijuan/Learn-open-silicon/blob/main/wiki/Log/images/2026-08-16_24-magic-tutorial-zona-n-resize3.png)  
+
+Y la convertimos en zona de difusión n. Ahora ya sín se cumplen las reglas DRC, y **no hay errores**
+
+![](https://github.com/Obijuan/Learn-open-silicon/blob/main/wiki/Log/images/2026-08-16_25-magic-tutorial-zona-n-resize4.png)  
+
+Hemos dibujado la **zona N mínima**
+
+
+
+
+
+
 ## Zona N definitiva
 
 ## Polisilicio
