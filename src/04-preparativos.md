@@ -29,7 +29,7 @@ Las unidades por defecto que vamos a utilizar son **micrómetros** (µm), que en
 
 ## Haciendo zoom
 
-Cuando se trabaja con programas de diseño visuales, es importantísimo conocer el manejo de la **cámara**, y saber cómo acercarse para ver detalles, alejarse para ver más información, así como centrar la vista actual. En Magic todo esto se realiza **mediante teclas**. NO SE HACE CON EL RATÓN, como en los programas modernos
+Cuando se trabaja con programas de diseño visuales, es importantísimo conocer el manejo de la **cámara**, y saber cómo **acercarse** para ver detalles, **alejarse** para ver más información, así como **centrar** la vista actual. En Magic todo esto se realiza **mediante teclas**. NO SE HACE CON EL RATÓN, como en los programas modernos
 
 > [!NOTE]
 > Recordemos que Magic es un programa desarrollado hace décadas, donde todavía el ratón era un elemento que podía NO estar presente en los ordenadores. Por eso está todo pensado para hacerse con el teclado
@@ -52,6 +52,31 @@ Aunque conviene tener siempre en la cabeza estas teclas, también se encuentran 
 
 
 ## Configurando el grid
+
+Antes de empezar a diseñar vamos **configurar el grid**. Magic es un programa de **diseño 2D**, donde los elementos que se añaden son siempre **rectángulos**. Por eso resulta muy conveniente definir una **cuadrícula** (grid) y configurarla para el tamaño más adecuado según la tecnología que estamos usando.
+
+Nosotros vamos a establecer la **resolución de la cuadrícula** en 0.05µm (50nm). Pinchamos en **windows** y luego **Set grid 0.05um**
+
+![Set grid](images/grid-01-set.png)
+ 
+
+Se activa automáticamente, y veremos la cuadrícula:
+
+![Grid on](images/grid-02.png)
+
+Si echamos el zoom hacia atrás vemos más cuadrículas
+
+![Origen](images/grid-03-origen.png)
+
+Hay un **punto negro** en la esquina inferior izquierda de la caja. Indica donde se encuentra el **origen de coordenadas** (0, 0)  
+Ahora pinchamos en la opción **windows/Snap-to-grid-on** para que la caja esté siempre sobre el grid. Esto facilita mucho el trabajo con los diseños
+
+![Sanp](images/grid-04-snap.png)
+
+
 ## Midiendo el tamaño de la caja
+
+
+
 ## Guardando el diseño en un fichero
   
