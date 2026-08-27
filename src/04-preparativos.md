@@ -76,6 +76,17 @@ Ahora pinchamos en la opción **windows/Snap-to-grid-on** para que la caja esté
 
 ## Midiendo el tamaño de la caja
 
+La **caja** resalta la **zona activa** dentro del diseño, que es siempre un rectángulo. Esta caja la podemos agrandar y cambiar, como veremos más adelante, para señalar la zona de interés
+
+Para saber el tamaño que tiene esta caja, y por tanto saber el tamaño de la zona de interés, utilizamos la opción  **Windows/Measure box** o apretamos la tecla `b`. Nos apareceren las dimensiones en la ventana de texto:
+
+![Measure1](images/measure-01.png)
+
+La caja por defecto tiene el tamaño de una celda del grid, que comprobamos que es de 0.05umx0.05um
+
+Otra forma de obtener el tamaño de la **caja** es escribiendo el comando `box`
+
+![Measure2](images/measure-02.png)
 
 
 ## Guardando el diseño en un fichero
