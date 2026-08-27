@@ -86,7 +86,45 @@ Ahora vamos a poner una zona N de 0.65 x 0.45 (um) en el origen. Utilizamos el c
 
 La Zona N definitiva está lista
 
-## Polisilicio
+## Colocando el Polisilicio
+
+Lo siguiente es colocar **la zona de polisilicio** que atraviesa la zona N, para generar las **dos zonas N**, una a la izquierda y otra a la derecha, y la conexión con la puerta. Para no violar las reglas DRC, el polisilicio debe **sobresalir 0.15um** por arriba y por abajo
+
+Primero marcamos la casilla donde va a estar la **esquina inferior izquierda** del polisilicio. Esto lo hacemos apretando el **botón izquierdo** del ratón
+
+![alt text](images/polisilicio-01.png)
+
+
+Se sitúa la caja actual con su esquina inferior izquierda en la cuadrícula indicada, ajustada al grid. Ahora posicionamos el ratón en la **esquina superior derecha** de la zona donde queremos que esté el polisicio
+
+![alt text](images/polisilicio-02.png)
+
+Apretamos el **botón derecho** y aparece la nueva caja
+
+![alt text](images/polisilicio-03.png)
+
+
+Escribimos `paint polysilicon` para convertirla en la zona de polisilicio
+
+![alt text](images/polisilicio-04.png)
+
+
+En la pantalla gráfica vemos el polisilicio. Observamos que **NO HAY ERRORES DE DRC**
+
+![alt text](images/polisilicio-05.png)
+
+
+¡Ya tenemos la base de nuestro primer MOSFET!
+
+En el MOSFET N hay **3 capas**:
+
+* **ndifussion**: Las 2 zonas N, que aparecen delimitadas por el polisilicio. Se dibuja una única zona N y **magic calcula** las dos a partir de la intersección con el polisilicio
+* **polysilicon**: La capa de polisilicio que hemos dibujado. Magic calcula su intersección con la zona N y divide esta capa en dos zonas. Una de polisilio puro, que sobresale por la zona N y la zona de intersección que conforma la siguiente capa (ntransistor)
+* **ntransistor**: Es la capa de **intersección** entre la zona N y el polisilicio. En la fabricación del chip esta zona se **dopa** para que haya muchos electrones libres y la puerta del transistor conduzca
+
+![alt text](images/polisilicio-06.png)
+
+
 
 ## Mostrando/oculatando capas
 
