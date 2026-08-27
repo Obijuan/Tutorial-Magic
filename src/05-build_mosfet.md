@@ -62,20 +62,21 @@ Ahora sólo queda **1 error de DRC**. Se muestra en la capa errors las cuadrícu
 
 Repetimos el proceso. Con el **botón derecho** seleccionamos el punto de la cuadrícula donde queremos que se sitúe **la esquina superior derecha** de la caja
 
-![](https://github.com/Obijuan/Learn-open-silicon/blob/main/wiki/Log/images/2026-08-16_24-magic-tutorial-zona-n-resize3.png)  
+![Zona N height](images/zona-n-height-1.png)
 
-Y la convertimos en zona de difusión n. Ahora ya sín se cumplen las reglas DRC, y **no hay errores**
+Y la convertimos en zona de difusión n. Ahora ya sí se cumplen las reglas DRC, y **no hay errores**
 
-![](https://github.com/Obijuan/Learn-open-silicon/blob/main/wiki/Log/images/2026-08-16_25-magic-tutorial-zona-n-resize4.png)  
+![Zona N height](images/zona-n-height-2.png)
 
 Hemos dibujado la **zona N mínima**
 
 
 
-
-
-
 ## Zona N definitiva
+
+
+
+
 
 ## Polisilicio
 
