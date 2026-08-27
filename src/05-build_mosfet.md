@@ -74,9 +74,17 @@ Hemos dibujado la **zona N mínima**
 
 ## Zona N definitiva
 
+Cuando creamos un mosfet N, **la zona N tiene que ser más grande**, para cumplir con todas las **reglas de diseño**. Su tamaño tiene que ser al menos de **0.650um x 0.450um**. Así que la vamos a crear desde 0
 
+Partimos del estado anterior, donde la caja rodea toda la zona N. Ejecutamos el comando `erase` y la zona desaparece, pero la caja sigue estando
 
+![Zona N final](images/zona-n-final-1.png)
 
+Ahora vamos a poner una zona N de 0.65 x 0.45 (um) en el origen. Utilizamos el comando `box 0 0 0.65 0.45` seguido de `paint ndiffusion`
+
+![Zona N final](images/zona-n-final-2.png)
+
+La Zona N definitiva está lista
 
 ## Polisilicio
 
