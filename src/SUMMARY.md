@@ -1,5 +1,6 @@
 # Summary
 
-[Introduccion](01-intro.md)
+[Introducción](01-intro.md)
+[Instalación](02-install.md)
 
 
