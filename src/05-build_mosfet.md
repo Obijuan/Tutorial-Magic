@@ -33,6 +33,15 @@ Ahora se ven todas las cuadrículas nuevas. Por la parte superior hay 2 que indi
 
 ## Viendo los errores de DRC
 
+Para ver los errores pinchamos en **Options/DRC Manager**
+
+![DRC errors](images/zona-n-drc-errors-1.png)
+
+Se nos abre una ventana nueva, donde nos indica la regla que se está violando: `Diffusion width < 0.15um (diff/tap.1)`
+
+![DRC errors](images/zona-n-drc-errors-2.png)
+
+Lo que significa es que la zona de difusión N tiene **unas dimensiones menores que las mínimas permitidas**. Las mínimas son de **0.15um**. Esto es lo que nos indican las cuadrículas de la capa de error: Al menos, tanto **la anchura** como **la altura** de la zona n tiene que ocupar **3 cuadrículas**
 
 
 ## Ampliando la anchura de la zona N
