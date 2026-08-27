@@ -91,3 +91,32 @@ Otra forma de obtener el tamaño de la **caja** es escribiendo el comando `box`
 
 ## Guardando el diseño en un fichero
   
+En este tutorial vamos a construir un mosfet N. El diseño actual, que está en blanco, lo guardamos en el fichero `mosfet-n.mag`, que contendrá nuestro mosfet futuro. Para ello pinchamos en **cell/save as**
+
+![Save as](images/save-01.png)
+
+Se nos abre una ventana de diálogo donde escribimos el nombre del diseño. Escribimos `mosfet-n` y pinchamos en **ok**
+
+![Save as](images/save-02.png)
+
+Vemos en la parte superior cómo ha cambiado el nombre a **mosfet-n**
+
+![Save as](images/save-03.png)
+
+
+También se nos ha generado el fichero `mosfet-n.mag` en el directorio de trabajo
+
+```bash
+obijuan@JANEL:~/Develop/Tutorial-Magic/src/examples$ ls
+mosfet-n.mag
+obijuan@JANEL:~/Develop/Tutorial-Magic/src/examples$
+```
+El diseño es un fichero de texto, que podemos ver y editar:
+
+```
+magic
+tech sky130A
+timestamp 0
+<< end >>
+```
+
