@@ -126,9 +126,75 @@ En el MOSFET N hay **3 capas**:
 
 
 
-## Mostrando/oculatando capas
+## Mostrando/ocultando capas
+
+Todas las **capas** definidas en la tecnología Sky130A se encuentran en el **panel de la derecha**, como ya hemos visto. Es posible ocultar las capas visibles, así como volver a mostrarlas. Para **ocultar** hay que pinchar en la capa correspondiente usando **el botón derecho del ratón**
+
+En esta imagen vemos cómo se ha ocultado la capa `ntransistor`. Podemos ver que efectivamente ahora la zona N se ha dividido en 2 zonas N
+
+![alt text](images/layers.png)
+
+Para volver a **visualizar** cualquier capa basta con pinchar en la capa y usar **el botón izquierdo**
+
 
 ## Conectando la fuente
+
+Vamos a aprender a realizar **conexiones a la fuente** y **el drenador**, que son iguales. Ambos parten de la capa `ndiffusion`
+
+El punto de partida es una zona N cruzada por el polisilicio, como en el apartado anterior, pero con la geometría ligeramente cambiada: **más espacio en las zonas N** para que quepan los contactos nuevos que vamos a añadir. Ampliar esta zona es algo que ya sabemos hacer, y se deja como ejercicio. Para saber las dimensiones exactas, sólo hay que **contar cuadrículas** de la rejilla
+
+![alt text](images/source-01.png)
+
+El objetivo es **conectar la zona N de la fuente** con un **contacto metálico**, que es el que sale fuera del chip. Las conexiones están en **capas independientes** a mayor altura que el substrato. Estas capas de conexión están separadas, y son independientes. Por eso hay que añadir **contactos** entre ellas, que reciben el nombre de **vías**
+
+La cantidad de capas de interconexión y de vías a diferentes niveles depende de la tecnología usada. Para el caso de **sky130**, que es el que estamos utilizando, la información se encuentra en una figura en este enlace de Tinytapeout: [Skywater’s 130 nm](https://tinytapeout.com/siliwiz/resistors/). Se reproduce aquí la figura para tenerla más a mano:
+
+
+![alt text](images/source-03-sky130-map.png)
+
+
+En esta figura se **definen** todos los parámetros de esta tecnología, así como las **diferentes capas**. Como hemos visto en magic, la cosa es más compleja, y existen muchas más capas, pero en este tutorial iremos resumiento la información necesaria, para simplificarlo todo
+
+Este es el **modelo 3D** con las capas que tenemos de partida
+
+![alt text](images/source-02-3D.svg)
+
+
+Las capas de conexionado están a diferentes niveles. Para pasar de una a otra hay que utilizar **las vías**. La primera capa que hay se denomina `li` en la documentación (local interconection). Su uso es para realizar **conexiones locales** dentro del diseño actual. Se definen conexiones locales como aquellas que NO salen al exterior. Típicamente son **conexiones cortas**. A nivel de fabricación se usa un material especial (Nitruro de titanio) que soporta altas temperaturas
+
+
+![alt text](images/source-03-mosfet-n-li-3D.svg)
+
+
+🚧 DEBUG 🚧
+
+
+La capa `li` recibe el nombre de `locali` en magic. Para acceder a ella hay que colocar una **vía**. Las vías de conexión a li dependen del material que hay en la capa 0. En nuestro caso el material es tipo N y la vía tiene que ser capaz de conectarse bien a ese material. Por ello a nivel genérico estas vías, las que van del sustrato al bus `li` reciben el nombre genérico de `licon` (Conexiones a li). Pero en la práctica hay que usar tipos diferentes según el material del sustrato
+
+Como la fuente es tipo n, tenemos que usar en magic la capa `ndcontact`, que define un **contacto** entre el sustrato y li. Magic además genera las capas intermedias necesarias para realizar este contacto, pero no necesitamos entrar en tantos detalles
+
+Así que vamos a colocar el contacto `ndcontact`. Colocamos la caja como se indica en esta figura. El tamaño mínimo del contacto es de 4x4 cuadros del grid
+
+![](https://github.com/Obijuan/Learn-open-silicon/blob/main/wiki/Log/images/2026-08-18_04-magic-tutorial-mosfet-n-ndcontact1.png)  
+
+Pinchamos con **el botón central del ratón** en la capa `ndcontact`. Nos aparece el contacto. En magic todos los contactos tiene una cruz. 
+
+![](https://github.com/Obijuan/Learn-open-silicon/blob/main/wiki/Log/images/2026-08-18_05-magic-tutorial-mosfet-n-ndcontact2.png)  
+
+Además observamos que aparecen **errores de DRC**. Son debidos a que todavía NO hemos metido la capa **locali**. Nos indican que esta capa no tiene el área mínima requerida (claro, al no estar, tiene área 0), y que tampoco hay un solape entre el contacto y esta área
+
+![](https://github.com/Obijuan/Learn-open-silicon/blob/main/wiki/Log/images/2026-08-18_06-magic-tutorial-mosfet-n-ndcontact3.png)  
+
+Colocamos la caja como se indica en la figura para crear la **capa locali**. Tiene que tener un tamaño lo suficientemente grande como para contener el `ndcontact` y también la vía que pondremos después para conectar con la capa metal1
+
+![](https://github.com/Obijuan/Learn-open-silicon/blob/main/wiki/Log/images/2026-08-18_07-magic-tutorial-mosfet-n-li1.png)  
+
+Nos aparece la **capa locali**. Ahora ya NO hay errores de DRC
+
+![](https://github.com/Obijuan/Learn-open-silicon/blob/main/wiki/Log/images/2026-08-18_08-magic-tutorial-mosfet-n-li2.png)  
+
+
+
 
 ## Conectando la puerta
 
