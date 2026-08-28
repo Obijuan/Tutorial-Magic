@@ -1,0 +1,31 @@
+* Testbench para obtener la familia de curvas I-V (Id vs Vds) para varios Vgs
+.include "mosfet_n.spice"
+
+* Ruta al PDK de Sky130
+.lib "/home/obijuan/.ciel/sky130A/libs.tech/ngspice/sky130.lib.spice" tt
+
+* ----------------------------------------------------------
+* -- Instanciar el MOSFET N
+* -- El orden de los parametros debe ser el mismo indicado
+* -- en el fichero mosfet_n.spice
+* -----------------------------------------------------------
+X1  SOURCE  GATE  VSUBS DRAIN  mosfet_n
+
+* Tensiones aplicadas al transistor
+Vss  SOURCE 0 DC 0V
+Vds  DRAIN  0 DC 0V
+Vgs  GATE   0 DC 0V
+Vsub VSUBS 0 DC 0V
+
+* Barrido anidado DC:
+* 1. Barrido principal: Variar Vds de 0V a 1.8V (pasos de 10mV)
+* 2. Barrido secundario: Variar Vgs de 0.6V a 1.8V en pasos de 0.3V
+.dc Vds 0 1.8 0.01 Vgs 0.6 1.8 0.3
+
+.control
+run
+* Dibujar la corriente de drenador para cada curva de Vgs
+plot -i(Vds) xlabel "Vds [V]" ylabel "Id [A]" title "Familia de Curvas Id vs Vds (Parametrizado por Vgs)"
+.endc
+
+.end

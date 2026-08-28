@@ -209,5 +209,5 @@ Esta es la gráfica que aparece:
 ![alt text](images/sim-04.png)
 
 
-El transistor está FUNCIONANDO!!!
+**¡¡El transistor está FUNCIONANDO!!!**
 

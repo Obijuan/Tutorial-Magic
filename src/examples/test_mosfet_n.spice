@@ -1,0 +1,30 @@
+* Testbench para simular el transistor NMOS
+.include "mosfet_n.spice"
+
+* Ruta al modelo del PDK Sky130
+.lib "/home/obijuan/.ciel/sky130A/libs.tech/ngspice/sky130.lib.spice" tt
+
+* ----------------------------------------------------------
+* -- Instanciar el MOSFET N
+* -- El orden de los parametros debe ser el mismo indicado
+* -- en el fichero mosfet_n.spice
+* -----------------------------------------------------------
+X1  SOURCE  GATE  VSUBS DRAIN  mosfet_n
+
+* Tensiones aplicadas al transistor
+Vss SOURCE 0 DC 0V
+Vds DRAIN  0 DC 1.8V
+Vgs GATE   0 DC 0V
+Vsub VSUBS 0 DC 0V
+
+* Variar Vgs desde 0V hasta 1.8V en pasos de 10mV
+.dc Vgs 0 1.8 0.01
+
+.control
+run
+* Mostrar la gráfica de la corriente que circula por el 
+* transistor en funcion de la tension que llega por la puerta
+plot -i(Vds)
+.endc
+
+.end

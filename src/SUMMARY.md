@@ -6,6 +6,7 @@
 [Preparativos iniciales](04-preparativos.md)
 [Creando un MOSFET N](05-build_mosfet.md)
 [Simulando el MOSFET N](06-simulation.md)  
+[Formato de fabricación GDS](07-gds.md)
 
 ----
 [Borrador](borrador.md)
