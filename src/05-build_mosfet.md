@@ -251,37 +251,37 @@ Al apretar `s` la primera vez se selecciona la parte metálica hasta llegar a `v
 
 El último paso para finalizar la conexión es **nombrar el contacto metálico**. Lo vamos a denotar como **SOURCE**. Para ello situamos el cursor en el punto de la capa metálica donde queremos colocar el nombre y pulsamos el botón izquierdo y derecho del ratón para obtener **un punto** (es un rectángulo degenerado en un punto)
 
-🚧 DEBUG 🚧
 
-
-![](https://github.com/Obijuan/Learn-open-silicon/blob/main/wiki/Log/images/2026-08-19_13-magic-tutorial-mosfet-n-contact1.png)  
+![alt text](images/source-20-contact1.png)
 
 En la **consola** de magic escribimos el comando `label SOURCE`
 
-![](https://github.com/Obijuan/Learn-open-silicon/blob/main/wiki/Log/images/2026-08-19_14-magic-tutorial-mosfet-n-contact2.png)  
+![alt text](images/source-21-contact2.png)
 
 En el diseño vemos que aparece la etiqueta SOURCE en el punto que teníamos seleccionado
 
-![](https://github.com/Obijuan/Learn-open-silicon/blob/main/wiki/Log/images/2026-08-19_15-magic-tutorial-mosfet-n-contact3.png)  
+![alt text](images/source-22-contact3.png)
 
 Si usamos la tecla `s` para seleccionar todo el nodo completo, también veremos el nombre de ese nodo: SOURCE
 
-![](https://github.com/Obijuan/Learn-open-silicon/blob/main/wiki/Log/images/2026-08-19_16-magic-tutorial-mosfet-n-contact4.png)  
+![alt text](images/source-23-contact4.png)
+
 
 El último paso es convertir la etiqueta en un **puerto**. Ejecutamos el comando `port make`
 
-![](https://github.com/Obijuan/Learn-open-silicon/blob/main/wiki/Log/images/2026-08-19_17-magic-tutorial-mosfet-n-port.png)  
+
+![alt text](images/source-24-port.png)
 
 La etiqueta cambia a color azul para indicar que es un puerto
 
-![](https://github.com/Obijuan/Learn-open-silicon/blob/main/wiki/Log/images/2026-08-19_17-magic-tutorial-mosfet-n-port2.png)  
+![alt text](images/source-25-port2.png)
 
 Ya está la **FUENTE** terminada
 
 
 ## Conectando la puerta
 
-
+🚧 DEBUG 🚧
 
 ## Conexión con el sustrato
 
