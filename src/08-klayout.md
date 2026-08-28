@@ -1,7 +1,5 @@
 # Herramienta Klayout
 
-  🚧 DEBUG 🚧
-
 Para visualizar los **archivos GDS** podemos utilizar la herramienta [Klayout](https://www.klayout.de/). Para instalarlo en Ubuntu hay que descargar el fichero `.deb` desde aquí: [https://www.klayout.de/build.html](https://www.klayout.de/build.html)
 
 Yo he bajado la versión **0.30.10**. Se instala con `sudo apt install klayout_0.30.10-1_amd64.deb`. Luego hay que ejecutar `sudo apt --fix-broken install` para que se instalen todas las dependencias

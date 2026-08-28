@@ -20,7 +20,7 @@ En la ventana del diseño vemos que la caja se pone de **color verde**, y en los
 
 ![Zona N con errores](images/zona-n-03-min3.png)
 
-También observamos que el **DRC FALLA**: Hay 2 errores. Esto es debido a que **NO se puede construir una zona N tan pequeña**, con la tecnología sky130, sino que hay unas **dimensiones mínima**. Pero vamos a investigar sobre esto
+También observamos que el **DRC FALLA**: Hay 2 errores. Esto es debido a que **NO se puede construir una zona N tan pequeña**, con la tecnología sky130, sino que hay unas **dimensiones mínimas**. Pero vamos a investigar sobre esto
 
 Para ver el diseño completo, pinchamos en **windows/full view** o bien apretamos la tecla `v`
 
@@ -50,7 +50,7 @@ Vamos a solucionar primero **el problema de la anchura**. La anchura actual es d
 
 ![Zona N width](images/zona-n-width-1.png)
 
-Se dibuja una **nueva caja** que mantiene la izquina inferior izquierda en el mismo sitio que antes, pero sitúa la esquina superior derecha en el nuevo punto (alineado con la cuadrícula)
+Se dibuja una **nueva caja** que mantiene la esquina inferior izquierda en el mismo sitio que antes, pero sitúa la esquina superior derecha en el nuevo punto (alineado con la cuadrícula)
 
 Ahora pintamos la nueva zona, ejecutando el comando `paint ndiffusion`, igual que antes
 
@@ -169,14 +169,14 @@ Las capas de conexionado están a diferentes niveles. Para pasar de una a otra h
 
 La capa `li` recibe el nombre de `locali` en magic. Para acceder a ella hay que colocar una **vía**. Las vías de conexión a `li` dependen del material que hay en la **capa 0**. En nuestro caso el material es tipo N y la vía tiene que ser capaz de conectarse bien a ese material. Por ello a nivel genérico estas vías, las que van del sustrato al bus `li` reciben el nombre genérico de `licon` (Conexiones a li). Pero en la práctica hay que usar tipos diferentes según el material del sustrato
 
-Como **la fuente es tipo n**, tenemos que usar en magic la capa `ndcontact`, que define un **contacto** entre el sustrato y `li`. Magic además genera las capas intermedias necesarias para realizar este contacto, pero no necesitamos entrar en tantos detalles
+Como **la fuente es tipo n**, tenemos que usar en magic la capa `ndcontact`, que define un **contacto** entre la zona N y `li`. Magic además genera las capas intermedias necesarias para realizar este contacto, pero no necesitamos entrar en tantos detalles
 
 Así que vamos a colocar el contacto `ndcontact`. Colocamos la caja como se indica en esta figura. El tamaño mínimo del contacto es de 4x4 cuadros del grid
 
 ![alt text](images/source-04-ndcontact1.png)
 
 
-Pinchamos con **el botón central del ratón** en la capa `ndcontact`. Nos aparece el contacto. En magic todos los contactos tiene una cruz. 
+Pinchamos con **el botón central del ratón** en la capa `ndcontact`. Nos aparece el contacto. En magic todos los contactos tiene **forma de X**. 
 
 ![alt text](images/source-05-ndcontact2.png)
 
@@ -211,7 +211,7 @@ Si apretamos `s` una vez más, se selecciona también la zona N de la fuente
 
 ![alt text](images/source-12-li6.png)
 
-Se han selecciona **todas las zonas que están conectas**. Si no hubiésemos conectado la vía `ndcontact` sería capas independiente. Es una forma sencilla de comprobar que **nuestro diseño está bien hecho**
+Se han selecciona **todas las zonas que están conectas**. Si no hubiésemos conectado la vía `ndcontact` serían capas independiente. Es una forma sencilla de comprobar que **nuestro diseño está bien hecho**
 
 El siguiente paso es conectar la fuente del transistor a la **capa metálica**, porque la queremos llevar a las **patas del chip** para realizar pruebas. La siguiente capa de condución es `metal1` y para llegar a ella hay que colocar una **vía** en la capa `locali` que se llama `viali` (en la documentación de skywater la denomina **mcon**). NO ES POSIBLE conectar la fuente directamente a `metal1`, sino que hay que pasar obligatoriamente por `locali`
 
@@ -220,7 +220,7 @@ En este dibujo 3D se muestran las dos nuevas capas que necesitamos, `viali` y `m
 ![alt text](images/source-13-metal1-3D.svg)
 
 
-Vamos a crear ambas capas en magic. Antes hemos empezado colocando primero la vía, y hemos visto cómo aparecián errores de DRC porque una vía debe conectar dos capas. Ahora, para probar, vamos a colocar primero la capa `metal1`. Lo primero es dibujar la caja. Tiene que superposerse con `locali` (para que la vía que coloquemos luego entre en contacto con ambas capas) y extenderse hacia la izquierda
+Vamos a crear ambas capas en magic. Antes hemos empezado colocando primero la vía, y hemos visto cómo aparecían errores de DRC porque una vía debe conectar dos capas. Ahora, para probar, vamos a colocar primero la capa `metal1`. Lo primero es dibujar la caja. Tiene que superposerse con `locali` (para que la vía que coloquemos luego entre en contacto con ambas capas) y extenderse hacia la izquierda
 
 ![alt text](images/source-14-metal1-1.png)
 
@@ -329,7 +329,7 @@ Así es como queda en 3D lo que llevamos construido
  
 ## Conexión con el sustrato
 
-El **sustrato-p** hay que sacarlo también al exterior, para conectarlo a `gnd`. Para su conexión primero hay que crear una zona con extra de portadores p que se denomina `psubstratepdiff`. Primero dibujamos la caja y luego apretamos con el **botón central del ratón** en la capa `psubstratepdiff`
+El **sustrato-p** hay que sacarlo también al exterior, para conectarlo a `GND`. Para su conexión primero hay que crear una zona con **extra de portadores p** que se denomina `psubstratepdiff`. Primero dibujamos la caja y luego apretamos con el **botón central del ratón** en la capa `psubstratepdiff`
 
 
 ![alt text](images/subs-01.png)

@@ -10,7 +10,7 @@ Para arrancar Magic seguimos estos pasos:
 
 2. Arrancar Magic con `magic -rc ~/.ciel/sky130A/libs.tech/magic/sky130A.magicrc`
 
-Hay que arrancar Magic pasándole como argumento un script de arranque para configurar la Tecnología sky130
+Hay que arrancar Magic pasándole como argumento un **script de arranque** para configurar la Tecnología sky130
 
 ```bash
 (asic) obijuan@JANEL:~/Develop/Tutorial-Magic$ magic -rc ~/.ciel/sky130A/libs.tech/magic/sky130A.magicrc

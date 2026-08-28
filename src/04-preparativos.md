@@ -2,7 +2,7 @@
 
 Antes de diseñar nuestro **primer MOSFET-N**, vamos a ir **configurando** Magic, así como aprendiendo su **interfaz**
 
-Magic es un programa **antiguo**, aunque muy potente. Por ello la interfaz resulta actualmente un poco **exraña**. Sin embargo, cuando se aprenden sus fundamentos, resulta **muy sencilla**
+Magic es un programa **antiguo**, aunque muy potente. Por ello la interfaz resulta actualmente un poco **extraña**. Sin embargo, cuando se aprenden sus fundamentos, resulta **muy sencilla**
 
 PERO es **muy importante** leer esta documetanción y NO intentar hacer nada por tu cuenta
 
@@ -15,7 +15,7 @@ Al arrancar Magic como se indica en el apartado anterior, nos aparece **la venta
 
 Esta es la pantalla donde haremos nuestro **diseño**. Vamos a destacar algunos de los elementos de la interfaz
 
-* **DRC**: Reglas de diseño. Se indica si se están violando o no las reglas de diseño del chip, con la tecnología actual. Inicialmente no hay diseño, y por eso no se están violando ninguna de las reglas de diseño. Aparece un check en verde
+* **DRC**: Reglas de diseño. Se indica si se están violando o no las reglas de diseño del chip, con la tecnología actual. Inicialmente no hay diseño, y por eso no se están violando ninguna de las reglas de diseño. Aparece un **check en verde**
 * **Nombre del diseño** actualmente cargado. Por defecto es **UNLOADED**
 * **Tecnología**: Sky130A
 * **Bloque cursor**: Zona del chip con la zona **activa**, donde afectarán los diferentes comandos que se usen
@@ -53,7 +53,7 @@ Aunque conviene tener siempre en la cabeza estas teclas, también se encuentran 
 
 ## Configurando el grid
 
-Antes de empezar a diseñar vamos **configurar el grid**. Magic es un programa de **diseño 2D**, donde los elementos que se añaden son siempre **rectángulos**. Por eso resulta muy conveniente definir una **cuadrícula** (grid) y configurarla para el tamaño más adecuado según la tecnología que estamos usando.
+Antes de empezar a diseñar vamos a **configurar el grid**. Magic es un programa de **diseño 2D**, donde los elementos que se añaden son siempre **rectángulos**. Por eso resulta muy conveniente definir una **cuadrícula** (grid) y configurarla para el tamaño más adecuado según la tecnología que estamos usando.
 
 Nosotros vamos a establecer la **resolución de la cuadrícula** en 0.05µm (50nm). Pinchamos en **windows** y luego **Set grid 0.05um**
 

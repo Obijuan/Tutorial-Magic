@@ -1,9 +1,9 @@
 # Instalación
 
-En este tutorial utilizaremos Magic junto con la tecnología sky130, que es la que podemos fabricar. Tenemos que realizar 2 instalaciones:
+En este tutorial utilizaremos [Magic](https://github.com/RTimothyEdwards/magic) junto con la [Tecnología sky130](https://github.com/gdsfactory/skywater130)  , que es la que podemos fabricar. Tenemos que realizar **2 instalaciones**:
 
 * La herramienta [Magic](https://github.com/RTimothyEdwards/magic) 
-* La tecnología sky130
+* La [Tecnología sky130](https://github.com/gdsfactory/skywater130)  
 
 ## Instalación de Magic
 
@@ -35,7 +35,7 @@ De momento vamos a **Cerrar** la aplicación, pinchando en **File/Quit**
 
 ## Instalando el gestor ciel
 
-Magic es un programa para diseño de chips que puede trabajar con diferentes tecnologías, o [PDK](https://www.zerotoasiccourse.com/terminology/pdk/) (Process Design Kit), proporcionados por los fabricantes
+Magic es un programa para **diseño de chips** que puede trabajar con **diferentes tecnologías**, o [PDK](https://www.zerotoasiccourse.com/terminology/pdk/) (Process Design Kit), proporcionados por los fabricantes
 
 Nosotros estamos interesados en trabajar con [OPEN PDKs](https://github.com/fossi-foundation/open-pdks), que han sido liberados por el fabricante. En concreto, usaremos el [Sky130](https://github.com/gdsfactory/skywater130) de Skywater
 
@@ -45,7 +45,7 @@ El gestor recomendado es [ciel](https://github.com/fossi-foundation/ciel)
 
 Para instalar **ciel** seguimos estos pasos:
 
-1. **Crear un entorno virtual de python**
+1. **Crear un entorno virtual de python**  
   Ciel es un paquete **python**, por lo que en vez de instalarlo directamente en el sistema, vamos a crear el entorno virtual **asic**, y dentro de él lo instalaremos
 
 ```bash
