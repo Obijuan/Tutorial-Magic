@@ -281,9 +281,56 @@ Ya está la **FUENTE** terminada
 
 ## Conectando la puerta
 
+Para conectar la puerta primero temos que **agrandar** la parte del polysilicio para que rodee por completo la vía que pondremos más adelante
+
+![alt text](images/gate-01.png)
+
+
+Lo siguiente es colocar el contacto, que se denomina `pcontact`. Lo situamos en el interior del polisilicio
+
+![alt text](images/gate-02.png)
+
+
+Y pulsamos **el botón central** del ratón
+
+![alt text](images/gate-03.png)
+
+
+Aparece la vía, pero salen errores de DRC porque todavía NO hemos colocado la capa `locali`. La añadimos a continuación, como ya sabemos
+
+![alt text](images/gate-04.png)
+  
+
+Desaparecen los errores de DRC. Ahora añadimos la vía `viali` para la conexión con la capa de metal. Salen también errores de DRC porque todavía no tenemos la capa `metal1`
+
+![alt text](images/gate-05.png)
+
+
+Colocamos la capa `metal1` y desaparecen los errores de DRC
+
+![alt text](images/gate-06.png)
+ 
+
+Por útimo ponemos la etiqueta `GATE` y la convertimos a un **puerto** ejecutando los comandos
+
+```
+label GATE
+port make
+```
+
+Utilizamos la tecla `s` para seleccionar toda la puerta, y comprobar que las conexiones son correctas
+
+![alt text](images/gate-07.png)
+
+
+Así es como queda en 3D lo que llevamos construido
+
+![alt text](images/gate-08-3D.svg)
+ 
+## Conexión con el sustrato
+
 🚧 DEBUG 🚧
 
-## Conexión con el sustrato
 
 ## Conexión con el drenador
 
