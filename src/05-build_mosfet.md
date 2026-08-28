@@ -97,11 +97,12 @@ Primero marcamos la casilla donde va a estar la **esquina inferior izquierda** d
 
 Se sitúa la caja actual con su esquina inferior izquierda en la cuadrícula indicada, ajustada al grid. Ahora posicionamos el ratón en la **esquina superior derecha** de la zona donde queremos que esté el polisicio
 
-![alt text](images/polisilicio-02.png)
+![alt text](images/polisilicio-03.png)
 
 Apretamos el **botón derecho** y aparece la nueva caja
 
-![alt text](images/polisilicio-03.png)
+
+![alt text](images/polisilicio-02.png)
 
 
 Escribimos `paint polysilicon` para convertirla en la zona de polisilicio
@@ -166,37 +167,36 @@ Las capas de conexionado están a diferentes niveles. Para pasar de una a otra h
 ![alt text](images/source-03-mosfet-n-li-3D.svg)
 
 
-🚧 DEBUG 🚧
+La capa `li` recibe el nombre de `locali` en magic. Para acceder a ella hay que colocar una **vía**. Las vías de conexión a `li` dependen del material que hay en la **capa 0**. En nuestro caso el material es tipo N y la vía tiene que ser capaz de conectarse bien a ese material. Por ello a nivel genérico estas vías, las que van del sustrato al bus `li` reciben el nombre genérico de `licon` (Conexiones a li). Pero en la práctica hay que usar tipos diferentes según el material del sustrato
 
-
-La capa `li` recibe el nombre de `locali` en magic. Para acceder a ella hay que colocar una **vía**. Las vías de conexión a li dependen del material que hay en la capa 0. En nuestro caso el material es tipo N y la vía tiene que ser capaz de conectarse bien a ese material. Por ello a nivel genérico estas vías, las que van del sustrato al bus `li` reciben el nombre genérico de `licon` (Conexiones a li). Pero en la práctica hay que usar tipos diferentes según el material del sustrato
-
-Como la fuente es tipo n, tenemos que usar en magic la capa `ndcontact`, que define un **contacto** entre el sustrato y li. Magic además genera las capas intermedias necesarias para realizar este contacto, pero no necesitamos entrar en tantos detalles
+Como **la fuente es tipo n**, tenemos que usar en magic la capa `ndcontact`, que define un **contacto** entre el sustrato y `li`. Magic además genera las capas intermedias necesarias para realizar este contacto, pero no necesitamos entrar en tantos detalles
 
 Así que vamos a colocar el contacto `ndcontact`. Colocamos la caja como se indica en esta figura. El tamaño mínimo del contacto es de 4x4 cuadros del grid
 
-![](https://github.com/Obijuan/Learn-open-silicon/blob/main/wiki/Log/images/2026-08-18_04-magic-tutorial-mosfet-n-ndcontact1.png)  
+![alt text](images/source-04-ndcontact1.png)
+
 
 Pinchamos con **el botón central del ratón** en la capa `ndcontact`. Nos aparece el contacto. En magic todos los contactos tiene una cruz. 
 
-![](https://github.com/Obijuan/Learn-open-silicon/blob/main/wiki/Log/images/2026-08-18_05-magic-tutorial-mosfet-n-ndcontact2.png)  
+![alt text](images/source-05-ndcontact2.png)
+
 
 Además observamos que aparecen **errores de DRC**. Son debidos a que todavía NO hemos metido la capa **locali**. Nos indican que esta capa no tiene el área mínima requerida (claro, al no estar, tiene área 0), y que tampoco hay un solape entre el contacto y esta área
 
-![](https://github.com/Obijuan/Learn-open-silicon/blob/main/wiki/Log/images/2026-08-18_06-magic-tutorial-mosfet-n-ndcontact3.png)  
+![alt text](images/source-06-ndcontact3.png)
 
 Colocamos la caja como se indica en la figura para crear la **capa locali**. Tiene que tener un tamaño lo suficientemente grande como para contener el `ndcontact` y también la vía que pondremos después para conectar con la capa metal1
 
-![](https://github.com/Obijuan/Learn-open-silicon/blob/main/wiki/Log/images/2026-08-18_07-magic-tutorial-mosfet-n-li1.png)  
+![alt text](<images/source-07- li1.png>)
 
 Nos aparece la **capa locali**. Ahora ya NO hay errores de DRC
 
-![](https://github.com/Obijuan/Learn-open-silicon/blob/main/wiki/Log/images/2026-08-18_08-magic-tutorial-mosfet-n-li2.png)  
-
-
-
+![alt text](images/source-08-li2.png)
 
 ## Conectando la puerta
+
+🚧 DEBUG 🚧
+
 
 ## Conexión con el sustrato
 
