@@ -5,6 +5,7 @@
 [Arrancando Magic](03-arranque.md)
 [Preparativos iniciales](04-preparativos.md)
 [Creando un MOSFET N](05-build_mosfet.md)
+[Simulando el MOSFET N](06-simulation.md)  
 
 ----
 [Borrador](borrador.md)
