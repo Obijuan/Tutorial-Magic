@@ -373,6 +373,29 @@ Este es el modelo 3D de lo que llevamos hasta ahora
 
 ## Conexión con el drenador
 
-🚧 DEBUG 🚧
+Para conectar el drenador hacemos **exactamente lo mismo** que con la fuente. Hay que colocar una vía `ndcontact`, la capa `locali`, la vía `viali` y la capa `metal1`.
+Con la tecla `s` comprobamos que todas las capas del drenador están conectadas
+
+
+![alt text](images/drain-01.png)  
+
+Así es como queda el **diseño final del mosfet**, con la rejilla activada:
+
+![alt text](images/drain-02.png)  
+
+
+Y este es **el diseño final** sin la rejilla
+
+![alt text](images/drain-03.png)  
+
+
+Y este es el **modelo 3D final**
+
+![alt text](images/drain-04-3D.svg)  
+
+
+
+
+
 
 
