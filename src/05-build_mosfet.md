@@ -329,10 +329,50 @@ Así es como queda en 3D lo que llevamos construido
  
 ## Conexión con el sustrato
 
-🚧 DEBUG 🚧
+El **sustrato-p** hay que sacarlo también al exterior, para conectarlo a `gnd`. Para su conexión primero hay que crear una zona con extra de portadores p que se denomina `psubstratepdiff`. Primero dibujamos la caja y luego apretamos con el **botón central del ratón** en la capa `psubstratepdiff`
+
+
+![alt text](images/subs-01.png)
+
+
+Aparece la capa sin ningún error de DRC
+
+Colocamos la capa `locali`, con un tamaño igual a las aneriores. No aparecen errores de DRC
+
+![alt text](images/subs-02.png)
+  
+
+Para conectar el sustrato-p con `locali` hay que utilizar un contacto de tipo `psusbstratepcontact`
+
+![alt text](images/subs-03.png)
+ 
+
+Colocamos la capa `metal1` y la vía `viali`, igual que con la fuente y la puerta
+
+![alt text](images/subs-04.png)
+  
+
+Por último creamos la etiqueta `VSUBS` y la convertimos en un puerto con los comandos:
+
+```
+label VSUBS
+make port
+```
+
+Comprobamos con la tecla `s` que hay conexión entre todas las capas
+
+![alt text](images/subs-05.png)
+ 
+
+El sustrato P ya lo tenemos accesible desde un contacto metálico
+
+Este es el modelo 3D de lo que llevamos hasta ahora
+
+![alt text](images/subs-06-3D.svg)
 
 
 ## Conexión con el drenador
 
+🚧 DEBUG 🚧
 
 
