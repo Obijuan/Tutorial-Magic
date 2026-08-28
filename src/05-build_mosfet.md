@@ -193,9 +193,94 @@ Nos aparece la **capa locali**. Ahora ya NO hay errores de DRC
 
 ![alt text](images/source-08-li2.png)
 
-## Conectando la puerta
+
+Ya tenemos conectada la capa `locali` con la capa `ndifussion` de nuestra fuente, a través de la vía `ndcontact`. Vamos a verificar que magic detecta que ambas capas están conectadas. Situamos el cursor dentro de la capa `locali`
+
+![alt text](images/source-09-li3.png)
+
+
+Pulsamos la tecla `s`. Se nos selecciona la parte de `locali` que llega hasta el comienzo de `ndcontact`
+
+![alt text](images/source-10-li4.png)
+
+Si volvemos a pulsar `s`, se seleccion la capa completa `locali` y la vía `ndcontact`. Es así porque ambas están conectadas
+
+![alt text](images/source-11-li5.png)
+
+Si apretamos `s` una vez más, se selecciona también la zona N de la fuente
+
+![alt text](images/source-12-li6.png)
+
+Se han selecciona **todas las zonas que están conectas**. Si no hubiésemos conectado la vía `ndcontact` sería capas independiente. Es una forma sencilla de comprobar que **nuestro diseño está bien hecho**
+
+El siguiente paso es conectar la fuente del transistor a la **capa metálica**, porque la queremos llevar a las **patas del chip** para realizar pruebas. La siguiente capa de condución es `metal1` y para llegar a ella hay que colocar una **vía** en la capa `locali` que se llama `viali` (en la documentación de skywater la denomina **mcon**). NO ES POSIBLE conectar la fuente directamente a `metal1`, sino que hay que pasar obligatoriamente por `locali`
+
+En este dibujo 3D se muestran las dos nuevas capas que necesitamos, `viali` y `metal1`
+
+![alt text](images/source-13-metal1-3D.svg)
+
+
+Vamos a crear ambas capas en magic. Antes hemos empezado colocando primero la vía, y hemos visto cómo aparecián errores de DRC porque una vía debe conectar dos capas. Ahora, para probar, vamos a colocar primero la capa `metal1`. Lo primero es dibujar la caja. Tiene que superposerse con `locali` (para que la vía que coloquemos luego entre en contacto con ambas capas) y extenderse hacia la izquierda
+
+![alt text](images/source-14-metal1-1.png)
+
+Ahora pinchamos con **el botón central** sobre la capa `metal1`, para crearla
+
+![alt text](images/source-15-metal1-2.png)
+
+Comprobamos que NO HAY ERRORES DRC. Si ponemos el cursor en la parte saliente de `metal1` (donde NO hay interseccion con `locali`) y apretamos la tecla `s`, veremos que NO SE SELECCIONA ningún rectangulo adicional. Esto significa que `metal1` está AISLADA. Es una capa SIN CONECTAR
+
+Para conectar ambas capas usamos `viali`. Hacemos como siempre. Primero situamos la caja. Le damos unas dimensiones igual que la otra vía, de 4x4 con este grid
+
+![alt text](images/source-16-metal1-3.png)
+
+Con el **botón central** pinchamos en `viali` para colocar la vía
+
+![alt text](images/source-17-metal1-4.png)
+
+Ahora todas las capas están unidas, desde `metal1` (superior) hasta `ndiffusion` (inferior), pasando por la intermedia `locali`
+
+Para comprobarlo situamos el cursor en la parte saliente de `metal1`
+
+![alt text](images/source-18-metal1-5.png)
+
+
+Al apretar `s` la primera vez se selecciona la parte metálica hasta llegar a `viali`. Si se aprieta una segunda vez, se selecciona toda la capa `metal1` y `viali`, y si pulsamos una tercera vez se seleccionan todas las capas: `metal1`, `locali`, `viali`, `ndcontact` y `ndiffusion`. Son todas las capas relacionadas con **la fuente** del MOSFET N
+
+![alt text](images/source-19-metal1-6.png)
+
+El último paso para finalizar la conexión es **nombrar el contacto metálico**. Lo vamos a denotar como **SOURCE**. Para ello situamos el cursor en el punto de la capa metálica donde queremos colocar el nombre y pulsamos el botón izquierdo y derecho del ratón para obtener **un punto** (es un rectángulo degenerado en un punto)
 
 🚧 DEBUG 🚧
+
+
+![](https://github.com/Obijuan/Learn-open-silicon/blob/main/wiki/Log/images/2026-08-19_13-magic-tutorial-mosfet-n-contact1.png)  
+
+En la **consola** de magic escribimos el comando `label SOURCE`
+
+![](https://github.com/Obijuan/Learn-open-silicon/blob/main/wiki/Log/images/2026-08-19_14-magic-tutorial-mosfet-n-contact2.png)  
+
+En el diseño vemos que aparece la etiqueta SOURCE en el punto que teníamos seleccionado
+
+![](https://github.com/Obijuan/Learn-open-silicon/blob/main/wiki/Log/images/2026-08-19_15-magic-tutorial-mosfet-n-contact3.png)  
+
+Si usamos la tecla `s` para seleccionar todo el nodo completo, también veremos el nombre de ese nodo: SOURCE
+
+![](https://github.com/Obijuan/Learn-open-silicon/blob/main/wiki/Log/images/2026-08-19_16-magic-tutorial-mosfet-n-contact4.png)  
+
+El último paso es convertir la etiqueta en un **puerto**. Ejecutamos el comando `port make`
+
+![](https://github.com/Obijuan/Learn-open-silicon/blob/main/wiki/Log/images/2026-08-19_17-magic-tutorial-mosfet-n-port.png)  
+
+La etiqueta cambia a color azul para indicar que es un puerto
+
+![](https://github.com/Obijuan/Learn-open-silicon/blob/main/wiki/Log/images/2026-08-19_17-magic-tutorial-mosfet-n-port2.png)  
+
+Ya está la **FUENTE** terminada
+
+
+## Conectando la puerta
+
 
 
 ## Conexión con el sustrato
